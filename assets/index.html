@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <form action="" class="formulario">
+            <div class="div-input">
+                <label for="input-tarefa" class="label">Tarefa</label>
+                <input id="input-tarefa" type="text" class="input">
+            </div>
+            <div class="div-input">
+                <label for="input-data" class="label">Data de conclusão</label>
+                <input type="date" id="input-data" class="input">
+            </div>
+            <div class="div-botao"><button id="btn-adicionar">Adicionar</button></div>
+        </form>
+        <table id="tabela">
+            <thead>
+                <th class="th-titulos-cabecalho">Tarefa</th>
+                <th class="th-titulos-cabecalho">Data</th>
+    
+            </thead>
+            <tbody id="body-table">
+                <!-- aqui o java script insere as  tarefas -->
+                 
+            </tbody>
+        </table>
+        <script src="script.js"></script>
+    </main>
+</body>
+</html>
