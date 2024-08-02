@@ -12,17 +12,19 @@
             <div class="div-input">
                 <label for="input-tarefa" class="label">Tarefa</label>
                 <input id="input-tarefa" type="text" class="input">
+                <p id="p-mensagem-erro-tarefa" class="p-mensagen-de-erro-input">Coloque um nome para a tarefa!</p>
             </div>
             <div class="div-input">
                 <label for="input-data" class="label">Data de conclusão</label>
                 <input type="date" id="input-data" class="input">
+                <p id="p-mensagen-erro-data" class="p-mensagen-de-erro-input">Coloque a Data de conclusão!</p>
             </div>
             <div class="div-botao"><button id="btn-adicionar">Adicionar</button></div>
         </form>
         <table id="tabela">
             <thead>
-                <th class="th-titulos-cabecalho">Tarefa</th>
-                <th class="th-titulos-cabecalho">Data</th>
+                <th id="titulo-tarefa-da-tabela" class="th-titulos-cabecalho">Tarefa</th>
+                <th id="titulo-data-da-tabela" class="th-titulos-cabecalho">Data de conclusão</th>
     
             </thead>
             <tbody id="body-table">

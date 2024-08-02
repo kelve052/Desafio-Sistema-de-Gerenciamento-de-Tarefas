@@ -2,26 +2,39 @@
     --roxo: rgb(87, 0, 87);
 }
 
+main{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
 .formulario{
     box-shadow: 3px 3px 50px #0000006c;
     width: 500px;
+    height: 232px;
 }
 
 .div-input{
     padding: 24px;
+    padding-bottom: 0px;
     display: flex;
     gap: 12px;
     align-items: center;
+    flex-wrap: wrap;
+    
 }
 .label{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 24px;
-    color: rgb(94, 94, 0);
+    color: var(--roxo);
 }
 .input{
     font-size: 16px;
     color: var(--roxo);
+    border: 1px solid;
 
     width: 300px;
     height: 30px;
@@ -31,8 +44,20 @@
 input:active{
     border: 2.5px solid var(--roxo);
 }
+
+.input-tremer{
+    animation: tremer 0.5s alternate;
+    border: #ffa600 solid 1px;
+}
 #input-data{
     width: 130px;
+    
+}
+
+.p-mensagen-de-erro-input{
+    color: transparent;
+    margin: 0;
+    
 }
 
 .div-botao{
@@ -52,7 +77,7 @@ input:active{
     
     font-size: 20px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-
+    font-weight: 400;
     cursor: pointer;
     
 }
@@ -64,4 +89,48 @@ input:active{
 #btn-adicionar:active{
     background-color: #b300b3;
     box-shadow: 10px 10px 10px #b300b38c;
+}
+
+
+/* animação que faz o input tremer */
+@keyframes tremer { 
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+/* css tabela */
+
+#tabela{
+    box-shadow: 3px 3px 50px #0000006c;
+    
+    width: 60%;
+    padding: 16px;
+    height: 100vh;
+}
+
+.th-titulos-cabecalho{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 24px;
+    border: 1px solid;
+    padding: 8px;
+    font-weight: 400;
+}
+#titulo-tarefa-da-tabela{
+    max-width: 500px;
+}
+
+#titulo-data-da-tabela{
+    max-width: 30px;
+    
 }
