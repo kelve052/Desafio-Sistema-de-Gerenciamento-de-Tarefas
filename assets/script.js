@@ -3,6 +3,8 @@ const inputData = document.getElementById('input-data')
 const bodyTable = document.getElementById('body-table')
 const pMensagemErroTarefa = document.getElementById('p-mensagem-erro-tarefa')
 const pMensagemErroData = document.getElementById('p-mensagen-erro-data')
+const tabela = document.getElementById('tabela')
+
 
 let arrayTarefas = []
 let contador = 0
@@ -77,6 +79,7 @@ const adiconarTarefa = (tarefa, data) => {
       inputData.className = 'input input-tremer'
     }
   }
+  tabelaExist()
 }
 
 const renderizarTarefasDoLocalStorage = () => {
@@ -161,6 +164,7 @@ const excluir = (id) => {
   setTimeout(() => {
     renderizarTarefasDoLocalStorage()
     setLivros()
+    tabelaExist()
   }, 1000);
 }
 
@@ -230,3 +234,12 @@ btnAdicionar.addEventListener('click', (e) => {
 const btnCancelar = document.getElementById('btn-cancelar')
 
 renderizarTarefasDoLocalStorage()
+
+const tabelaExist = ()=>{
+  if(arrayTarefas.length == 0){
+    tabela.style.display = 'none'
+  }else{
+    tabela.style.display = 'table'
+  }
+}
+tabelaExist()
