@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-bt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciamento de Tarefas</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <main>
         <form action="" class="formulario">
@@ -19,7 +21,10 @@
                 <input type="date" id="input-data" class="input">
                 <p id="p-mensagen-erro-data" class="p-mensagen-de-erro-input">Coloque a Data de conclusão!</p>
             </div>
-            <div class="div-botao"><button id="btn-adicionar">Adicionar</button></div>
+            <div class="div-botao">
+                <button id="btn-adicionar">Adicionar</button>
+                <button id="btn-salvar">Salvar</button>
+                <button id="btn-cancelar">Cancelar</button></div>
         </form>
         <table id="tabela">
             <thead id="cabecalho-tabela">
@@ -32,15 +37,16 @@
                         </p>
                     </div>
                 </th>
-    
+
             </thead>
             <tbody id="body-table">
                 <!-- aqui o java script insere as  tarefas -->
-                 <tr></tr>
+                <tr></tr>
             </tbody>
         </table>
         <p id="p-card-flutant">Tarefa adicionada com sucesso!</p>
         <script src="script.js"></script>
     </main>
 </body>
+
 </html>

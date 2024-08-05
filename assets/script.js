@@ -70,7 +70,7 @@ const adiconarTarefa = (tarefa, data) => {
 }
 
 const renderizarTarefasDoLocalStorage = () => {
-  if(contador == 0){
+  if (contador == 0) {
     getLivros()
   }
   contador = 0
@@ -84,6 +84,7 @@ const renderizarTarefasDoLocalStorage = () => {
     tdTarefa.innerText = elemento.tarefa
     tdData.innerText = elemento.data
     tdTarefa.id = `tarefa${contador}`
+    tdData.id = `data${contador}`
 
     // lixeira
     trash.src = 'imgs/trash.svg'
@@ -96,8 +97,8 @@ const renderizarTarefasDoLocalStorage = () => {
     // editar
     edit.src = 'imgs/edit.svg'
     edit.className = 'trash edit'
-    edit.id = contador
-    edit.addEventListener('click', editar())
+    edit.id = `edit${contador}`
+    edit.addEventListener('click', editar(tdTarefa.id, tdData.id))
 
 
 
@@ -149,9 +150,34 @@ const excluir = (id) => {
   setLivros()
 }
 
-const editar = ()=>{
-  return ()=>{
-    alert()
+const editar = (idTarefa, idData) => {
+  return () => {
+    setTimeout(() => {
+      inputTarefa.className = 'input'
+      inputData.className = 'input'
+    }, 1000);
+
+    const indexTarefa = idData.match(/\d+/)[0]; // Extrai o número da string
+    const indexData = idTarefa.match(/\d+/)[0]; // Extrai o número da string
+
+    const tdTarefa = document.getElementById(idTarefa)
+    const tdData = document.getElementById(idData)
+
+    console.log(tdTarefa.textContent)
+    inputTarefa.value = tdTarefa.textContent
+    inputData.value = tdData.textContent
+    inputTarefa.focus()
+    inputTarefa.className = 'input input-tremer-roxo'
+    inputData.className = 'input input-tremer-roxo'
+
+    btnAdicionar.style.display = 'none'
+    const btnSalvar = document.getElementById('btn-salvar')
+    btnSalvar.style.display = 'block'
+    btnSalvar.addEventListener('click', (e) => {
+      e.preventDefault()
+      alert(tdTarefa.textContent)
+    })
+
   }
 }
 
@@ -162,5 +188,10 @@ btnAdicionar.addEventListener('click', (e) => {
   e.preventDefault()
   adiconarTarefa(inputTarefa.value, inputData.value)
 })
+
+
+
+
+const btnCancelar = document.getElementById('btn-cancelar')
 
 renderizarTarefasDoLocalStorage()

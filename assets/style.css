@@ -52,7 +52,10 @@ input:active {
     animation: tremer 0.5s alternate;
     border: #ffa600 solid 1px;
 }
-
+.input-tremer-roxo{
+    animation: tremer 0.5s alternate;
+    border: #00d9ff solid 1px;
+}
 #input-data {
     width: 130px;
 
@@ -71,7 +74,7 @@ input:active {
     padding: 16px;
 }
 
-#btn-adicionar {
+.div-botao button{
     border-radius: 5px;
     border: none;
 
@@ -84,16 +87,26 @@ input:active {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 400;
     cursor: pointer;
+}
+#btn-adicionar {
+    
 
 }
+#btn-salvar {
+    display: none;
 
-#btn-adicionar:hover {
+}
+#btn-cancelar {
+    display: none;
+}
+
+.div-botao button:hover {
     transform: rotateX(20deg);
     transition: 0.2s;
     box-shadow: 10px 10px 10px #5fb30049;
 }
 
-#btn-adicionar:active {
+.div-botao button:active {
     background-color: #b300b3;
     box-shadow: 10px 10px 10px #b300b38c;
 }
