@@ -94,10 +94,12 @@ input:active {
 }
 #btn-salvar {
     display: none;
-
+    background-color: #00d9ff;
+    margin-left: 8px;
 }
 #btn-cancelar {
     display: none;
+    background-color: #ffa600;
 }
 
 .div-botao button:hover {
@@ -159,8 +161,56 @@ input:active {
     }
 }
 
+@keyframes piscar {
+    0% {
+        background-color: #5fb300;
+    }
 
+    10% {
+        background-color: #fff;
+    }
 
+    20% {
+        background-color: #5fb300;
+    }
+
+    30% {
+        background-color: #fff;
+    }
+
+    40% {
+        background-color: #5fb300;
+    }
+
+    50% {
+        background-color: #fff;
+    }
+
+    60% {
+        background-color: #5fb300;
+    }
+
+    70% {
+        background-color: #fff;
+    }
+
+    80% {
+        background-color: #5fb300;
+    }
+
+    90% {
+        background-color: #fff;
+    }
+
+    100% {
+        background-color: #5fb300;
+    }
+}
+
+.sumir{
+    transform: scale(0);
+    transition: 1s;
+}
 /* css tabela */
 
 #tabela {
@@ -235,6 +285,10 @@ input:active {
     padding-left: 16px;
     background-color: #ffa600;
     border: 2px solid var(--roxo);
+}
+
+.dados-piscar{
+    animation: 1.5s piscar linear;
 }
 
 /* pega apenas as datas da tabela */

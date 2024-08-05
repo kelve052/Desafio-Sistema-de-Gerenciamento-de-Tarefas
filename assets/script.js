@@ -146,8 +146,12 @@ const contadorTarefas = () => {
 
 const excluir = (id) => {
   arrayTarefas.splice(id, 1)
-  renderizarTarefasDoLocalStorage()
-  setLivros()
+  document.getElementById(`tarefa${id}`).className = 'dados-livro sumir'
+  document.getElementById(`data${id}`).className = 'dados-livro sumir'
+  setTimeout(() => {
+    renderizarTarefasDoLocalStorage()
+    setLivros()
+  }, 1000);
 }
 
 const editar = (idTarefa, idData) => {
@@ -156,14 +160,13 @@ const editar = (idTarefa, idData) => {
       inputTarefa.className = 'input'
       inputData.className = 'input'
     }, 1000);
-
+    console.log(idTarefa)
     const indexTarefa = idData.match(/\d+/)[0]; // Extrai o número da string
     const indexData = idTarefa.match(/\d+/)[0]; // Extrai o número da string
 
     const tdTarefa = document.getElementById(idTarefa)
     const tdData = document.getElementById(idData)
 
-    console.log(tdTarefa.textContent)
     inputTarefa.value = tdTarefa.textContent
     inputData.value = tdData.textContent
     inputTarefa.focus()
@@ -173,11 +176,24 @@ const editar = (idTarefa, idData) => {
     btnAdicionar.style.display = 'none'
     const btnSalvar = document.getElementById('btn-salvar')
     btnSalvar.style.display = 'block'
-    btnSalvar.addEventListener('click', (e) => {
+    btnCancelar.style.display = 'block'
+    btnSalvar.onclick = (e)=>{
       e.preventDefault()
-      alert(tdTarefa.textContent)
-    })
+      arrayTarefas[indexTarefa].tarefa = inputTarefa.value
+      arrayTarefas[indexData].data = inputData.value
 
+
+
+      setLivros()
+      renderizarTarefasDoLocalStorage()
+      document.getElementById(idData).className = 'dados-livro dados-piscar'
+      document.getElementById(idTarefa).className = 'dados-livro dados-piscar'
+      btnSalvar.style.display = 'none'
+      btnCancelar.style.display = 'none'
+      btnAdicionar.style.display = 'block'
+      inputTarefa.value = ''
+      inputData.value = ''
+    }
   }
 }
 
